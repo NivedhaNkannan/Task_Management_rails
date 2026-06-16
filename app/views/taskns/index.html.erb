@@ -1,0 +1,39 @@
+<h1>All Tasks</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Task Name</th>
+      <th>Description</th>
+      <th>Due Date</th>
+      <th>Category</th>
+      <th>Priority</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @taskns.each do |task| %>
+      <tr>
+        <td><%= task.id %></td>
+        <td><%= task.name %></td>
+        <td><%= task.description %></td>
+        <td><%= task.due_date %></td>
+        <td><%= task.category%></td>
+        <td><%= task.priority %></td>
+        <td>
+        <%= link_to "Update", edit_taskn_path(task) %>
+      </td>
+      <td>
+        <%= button_to "Delete",
+        taskn_path(task),method: :delete
+        
+         %>
+        </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
