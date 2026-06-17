@@ -11,6 +11,7 @@
       <th>Priority</th>
       <th>Update</th>
       <th>Delete</th>
+      <th>Subtask</th>
     </tr>
   </thead>
 
@@ -32,7 +33,9 @@
         
          %>
         </td>
-
+        <td>
+            <%= link_to "Add", new_taskn_subtask_path(task)%>
+        </td>
       </tr>
     <% end %>
   </tbody>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_16_062019) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_17_070914) do
   create_table "subtasks", force: :cascade do |t|
     t.string "category"
     t.datetime "created_at", null: false
@@ -18,9 +18,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_16_062019) do
     t.date "due_date"
     t.string "name"
     t.string "priority"
-    t.integer "task_id", null: false
+    t.integer "taskn_id"
     t.datetime "updated_at", null: false
-    t.index ["task_id"], name: "index_subtasks_on_task_id"
+    t.index ["taskn_id"], name: "index_subtasks_on_taskn_id"
   end
 
   create_table "taskns", force: :cascade do |t|
@@ -33,5 +33,5 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_16_062019) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "subtasks", "tasks"
+  add_foreign_key "subtasks", "taskns"
 end
